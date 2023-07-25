@@ -6,7 +6,7 @@ data = pd.ExcelFile('D:\Python-3.11\Optical_switch_modeling.xlsx', engine='openp
 sheet_names = data.sheet_names
 print(sheet_names)
 
-categories = []  # 所有种类名称
+categories = [] 
 value1 = []
 value2 = []
 value3 = []
@@ -20,8 +20,7 @@ for sheet in sheet_names:
             if sheet == 'Amplifier':
                 df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :]  # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :]
                 data1 = df_.iloc[0:5, 1:6]
                 df1 = df_.iloc[:, 0]
                 print(Ava)
@@ -45,8 +44,7 @@ for sheet in sheet_names:
             elif sheet =='Multiplexer_Demultiplexer':
                 df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :]  # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :] 
                 data1 = df_.iloc[0:5, 1:6]
                 df1 = df_.iloc[:, 0]
                 print(Ava)
@@ -70,8 +68,7 @@ for sheet in sheet_names:
             elif sheet == 'Transceiver':
                 df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :]  # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :]
                 data1 = df_.iloc[0:5, 1:6]
                 df1 = df_.iloc[:, 0]
                 print(Ava)
@@ -95,8 +92,7 @@ for sheet in sheet_names:
             elif sheet == 'Transponder':
                 df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :]  # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :]
                 data1 = df_.iloc[0:5, 1:6]
                 df1 = df_.iloc[:, 0]
                 print(Ava)
@@ -120,8 +116,7 @@ for sheet in sheet_names:
             elif sheet == 'Wavelength_Coupler_Splitter':
                 df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :]  # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :]
                 data1 = df_.iloc[0:5, 1:6]
                 df1 = df_.iloc[:, 0]
                 print(Ava)
@@ -145,8 +140,7 @@ for sheet in sheet_names:
             else:
                 df=pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
                 Ava = df.iloc[14, 0]
-                df_ = df.iloc[7:12, :] # 完整的EXCEL表格
-                # df_.columns = df.iloc[6:7, :].values[0]
+                df_ = df.iloc[7:12, :]
                 data1 = df_.iloc[0:5,1:6]
                 df1 = df_.iloc[:,0]
                 print(Ava)
@@ -171,8 +165,7 @@ for sheet in sheet_names:
         else:
             df = pd.read_excel('D:\Python-3.11\Optical_switch_modeling.xlsx', sheet_name=sheet).fillna('')
             Ava = df.iloc[24, 0]
-            df_ = df.iloc[27:32, :]  # 完整的EXCEL表格
-            # df_.columns = df.iloc[6:7, :].values[0]
+            df_ = df.iloc[27:32, :]
             data1 = df_.iloc[0:5, 1:6]
             df1 = df_.iloc[:, 0]
             print(Ava)
@@ -231,7 +224,6 @@ ax.barh(categories_1, offset_3, align='center', color='black', label='+25%')
 ax.barh(categories_1, offset_1, align='center', color='blue', label='-50%')
 ax.barh(categories_1, offset_2, align='center', color='green', label='-25%')
 
-# 绘制中心线
 ax.axvline(0.0, color='black', linewidth=1)
 
 plt.legend(fontsize=16)
